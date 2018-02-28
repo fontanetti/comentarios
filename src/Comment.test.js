@@ -5,11 +5,13 @@ import Comment from './Comment'
 describe('<Comment /', () => {
   it('renders without crashing', () => {
       const comment = {
-          comment: 'test'
+          comment: 'test',
+          user: {uid: '1', name: 'john'}
       }
-    const wrapper = shallow(<Comment comment={comment}/>)
+      const key = 1
+    const wrapper = shallow(<Comment key={key} comment={comment} />)
     expect(wrapper.length).toBe(1)
     expect(wrapper.is('.well')).toBe(true)
-    expect(wrapper.text()).toBe(comment.comment)
+    expect(wrapper.text()).toBe('john escreveu:test')
   })
 })

@@ -6,10 +6,12 @@ describe('<Comments /', () => {
   it('renders without crashing', () => {
       const comments = {
           1: {
-              comment: 'teste 1'
+              comment: 'teste 1',
+              name: 'john'
           },
           2: {
-              comment: 'teste 2'
+              comment: 'teste 2',
+              name: 'smith'
           }
       }
     const wrapper = shallow(<Comments comments={comments}/>)
